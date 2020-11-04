@@ -29,7 +29,8 @@ body {
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
-  color: #777777;
+  background-color: rgb(0,128,0,0.1);
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -3655,10 +3656,7 @@ h6 {
 }
 
 .blog_style1 .blog_text .blog_text_inner p {
-  font-size: 14px;
-  line-height: 24px;
-  color: #777777;
-  margin-bottom: 22px;
+
 }
 
 .blog_style1 .blog_text .blog_text_inner .date a {
@@ -4036,3 +4034,12 @@ footer button:hover{
 
 
 }
+/* code for fixing sidebar */
+.fixme{
+  position: -webkit-sticky; /* Safari & IE */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+}
+/* ends here !*/
