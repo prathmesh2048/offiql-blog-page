@@ -4043,3 +4043,28 @@ footer button:hover{
 
 }
 /* ends here !*/
+.content{
+ font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+ font-size: 19px;
+ letter-spacing: 0.06em;
+ line-height: 1.4em;
+
+
+}
+/*
+.background {
+    background:url('images/pexels-lukas-590016.jpg');
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.layer {
+    background-color: rgba(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+*/

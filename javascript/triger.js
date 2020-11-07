@@ -3,6 +3,22 @@ let success = (response)=>{
   console.log(response)
 
 
+
+for (var k = 0; k <= 3; k++){
+  if (response[k].title) {
+      document.getElementsByClassName('top_title')[k].innerHTML = response[k].title.substring(0,100)
+      document.getElementsByClassName('blog_title_side')[k].innerHTML = response[k].title.substring(0,100)
+
+  }
+  if (response[k].content){
+  document.getElementsByClassName('top_content')[k].innerHTML = response[k].content.substring(0,100)
+  }
+
+
+}
+
+
+
   // list creation
   // this list will contain 2,5,8..... etc
   // this list is basically an arithmetic progression of differnce of 3
@@ -53,7 +69,7 @@ let success = (response)=>{
                       <p>${response[i+1].content.substring(0,220)+ ' ....'}</p>
                       <div class="date">
                         <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
                       </div>
                     </div>
                   </div>
@@ -76,7 +92,7 @@ let success = (response)=>{
                     <p>${response[i].content.substring(0,220)+ ' ....'}</p>
                     <div class="date">
                       <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                      <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
                     </div>
                   </div>
                 </div>
@@ -86,29 +102,7 @@ let success = (response)=>{
         }
   }
 
-target.innerHTML+= `<nav class="blog-pagination justify-content-center d-flex">
-<ul class="pagination">
-    <li class="page-item">
-        <a href="#" class="page-link" aria-label="Previous">
-            <span aria-hidden="true">
-                <span class="lnr lnr-chevron-left"></span>
-            </span>
-        </a>
-    </li>
-    <li class="page-item"><a href="#" class="page-link">01</a></li>
-    <li class="page-item active"><a href="#" class="page-link">02</a></li>
-    <li class="page-item"><a href="#" class="page-link">03</a></li>
-    <li class="page-item"><a href="#" class="page-link">04</a></li>
-    <li class="page-item"><a href="#" class="page-link">09</a></li>
-    <li class="page-item">
-        <a href="#" class="page-link" aria-label="Next">
-            <span aria-hidden="true">
-                <span class="lnr lnr-chevron-right"></span>
-            </span>
-        </a>
-    </li>
-</ul>
-</nav>`
+
 
 }
 

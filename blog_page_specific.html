@@ -41,7 +41,7 @@
           <div class="col-md-3 col-sm-4">
             <div class="blog_img text-center">
               <div class="post_img">
-              <img class="img-fluid"  src="https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+              <img class=""  src="https://images.unsplash.com/photo-1521341057461-6eb5f40b07ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
               </div>
 
               <div class="post_text">
@@ -50,7 +50,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
 							</div>
 						</div>
             </div>
@@ -68,7 +68,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
 							</div>
 						</div>
             </div>
@@ -85,7 +85,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
 							</div>
 						</div>
             </div>
@@ -102,7 +102,7 @@
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
 							<div class="date">
 								<a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-								<a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
 							</div>
 						</div>
             </div>
@@ -131,36 +131,15 @@
                               <div class="blog_text">
                                 <div class="blog_text_inner">
 
-                                  <h1 class="text-center">Title</h1>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                  <h1 class="text-center title_">Title</h1>
+                                  <br>
+                                  <p class="content">
+
+                                    </p>
 
                                   <div class="date">
                                     <a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> March 14, 2018</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 05</a>
+
                                   </div>
                                 </div>
                               </div>
@@ -210,7 +189,25 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 
 
+<script type="text/javascript">
+let success = (response) =>{
+  document.getElementsByClassName('title_')[0].innerHTML = response[0].title
+  document.getElementsByClassName('content')[0].innerHTML = response[0].content
+}
+$.ajax({
+    type: "GET",
+    dataType: "json",
+    crossDomain: true,
+    url: "http://app.offiql.com/api/v1/blogs",
+    success: success,
+    failure: function(response){
+      console.log("fail")
+      console.log(response)
 
+    }
+  });
+
+</script>
 
 
     </body>
